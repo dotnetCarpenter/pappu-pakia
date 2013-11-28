@@ -95,8 +95,7 @@ mit.main = function() {
       $(this).css("backgroundPosition", "0px -40px");
       music.volume = 0;
       if(iOS.test) {
-        iOS.musicSrc = music.src;
-        music.src= "";
+        music.pause();
       }
       isMute = true;
     }
@@ -105,7 +104,7 @@ mit.main = function() {
       $(this).css("backgroundPosition", "0px 0px");
       music.volume = 0.2;
       if(iOS.test) {
-        music.src = iOS.musicSrc;
+        music.start();
       }
       isMute = false;
     }
