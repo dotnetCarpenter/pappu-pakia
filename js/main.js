@@ -102,6 +102,7 @@ mit.main = function() {
       $(this).css("backgroundPosition", "0px 0px");
       music.volume = 0.2;
       if(iOS) {
+        alert("music.musicSrc");
         music.src = music.musicSrc;
       }
       isMute = false;
