@@ -92,8 +92,7 @@ mit.main = function() {
       $(this).css("backgroundPosition", "0px -40px");
       music.volume = 0;
       if(iOS) {
-        music.musicSrc = music.src; // expando
-        music.src = "";
+        music.noteOff(0)
       }
       isMute = true;
     }
@@ -102,8 +101,7 @@ mit.main = function() {
       $(this).css("backgroundPosition", "0px 0px");
       music.volume = 0.2;
       if(iOS) {
-        alert("music.musicSrc");
-        music.src = music.musicSrc;
+        music.noteOn(0)
       }
       isMute = false;
     }
