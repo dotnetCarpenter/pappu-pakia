@@ -84,17 +84,14 @@ mit.main = function() {
   var isMute = false;
 
   // sound volume can not be set in iOS, hence this work-around
-  var iOS = {
-    test: /(iPad|iPhone|iPod)/g.test( navigator.userAgent ),
-    musicSrc: ""
-  };
+  var iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
 
   // Mute the game if button is clicked
   $("#mute").click(function() {
     if(isMute == false) {
       $(this).css("backgroundPosition", "0px -40px");
       music.volume = 0;
-      if(iOS.test) {
+      if(iOS) {
         music.pause();
       }
       isMute = true;
@@ -103,9 +100,8 @@ mit.main = function() {
     else {
       $(this).css("backgroundPosition", "0px 0px");
       music.volume = 0.2;
-      if(iOS.test) {
+      if(iOS) {
         music.play();
-        alert("play");
       }
       isMute = false;
     }
