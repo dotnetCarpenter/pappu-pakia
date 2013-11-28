@@ -95,6 +95,7 @@ mit.main = function() {
       $(this).css("backgroundPosition", "0px -40px");
       music.volume = 0;
       if(iOS.test) {
+        alert("yayayayay");
         music.pause();
       }
       isMute = true;
